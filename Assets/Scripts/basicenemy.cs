@@ -18,5 +18,14 @@ public class basicenemy : Enemy
     public override IEnumerator attack()
     {
         yield return new WaitForSeconds(chompcasttime);
+        if (Vector3.Distance(target.position, transform.position) < chomprange) 
+        {
+            Debug.Log("chomped");
+        }
+        else
+        {
+            Debug.Log("miss");
+        }
+        yield return new WaitForSeconds(attackcooldown);
     }
 }

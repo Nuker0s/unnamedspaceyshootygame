@@ -393,9 +393,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5303c8674c1f2f41928deff131b98cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 6790142134443354894}
+  damage: 10
+  playerdetecionrange: 120
+  attackrange: 5
+  attackcooldown: 0
+  target: {fileID: 0}
   agent: {fileID: 327463119}
   targetpos: {x: 0, y: 0, z: 0}
+  chompcasttime: 0
+  chomprange: 0
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,9 +739,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5303c8674c1f2f41928deff131b98cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 6790142134443354894}
+  damage: 10
+  playerdetecionrange: 120
+  attackrange: 5
+  attackcooldown: 0
+  target: {fileID: 0}
   agent: {fileID: 596906001}
   targetpos: {x: 0, y: 0, z: 0}
+  chompcasttime: 0
+  chomprange: 0
 --- !u!195 &596906001
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1009,9 +1021,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5303c8674c1f2f41928deff131b98cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
+  playerdetecionrange: 120
+  attackrange: 5
+  attackcooldown: 0
   target: {fileID: 6790142134443354894}
   agent: {fileID: 810929484}
   targetpos: {x: 0, y: 0, z: 0}
+  chompcasttime: 0
+  chomprange: 0
 --- !u!195 &810929484
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1354,9 +1372,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5303c8674c1f2f41928deff131b98cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 6790142134443354894}
+  damage: 10
+  playerdetecionrange: 120
+  attackrange: 5
+  attackcooldown: 0
+  target: {fileID: 0}
   agent: {fileID: 1077672025}
   targetpos: {x: 0, y: 0, z: 0}
+  chompcasttime: 0
+  chomprange: 0
 --- !u!195 &1077672025
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1512,9 +1536,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5303c8674c1f2f41928deff131b98cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 6790142134443354894}
+  damage: 10
+  playerdetecionrange: 120
+  attackrange: 5
+  attackcooldown: 0
+  target: {fileID: 0}
   agent: {fileID: 1153754557}
   targetpos: {x: 0, y: 0, z: 0}
+  chompcasttime: 0
+  chomprange: 0
 --- !u!195 &1153754557
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1670,9 +1700,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5303c8674c1f2f41928deff131b98cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 6790142134443354894}
+  damage: 10
+  playerdetecionrange: 120
+  attackrange: 5
+  attackcooldown: 0
+  target: {fileID: 0}
   agent: {fileID: 1166273969}
   targetpos: {x: 0, y: 0, z: 0}
+  chompcasttime: 0
+  chomprange: 0
 --- !u!195 &1166273969
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1879,9 +1915,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5303c8674c1f2f41928deff131b98cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
+  playerdetecionrange: 120
+  attackrange: 5
+  attackcooldown: 0
   target: {fileID: 6790142134443354894}
   agent: {fileID: 1237445456}
   targetpos: {x: 0, y: 0, z: 0}
+  chompcasttime: 0
+  chomprange: 0
 --- !u!195 &1237445456
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2037,9 +2079,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5303c8674c1f2f41928deff131b98cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 6790142134443354894}
+  damage: 10
+  playerdetecionrange: 120
+  attackrange: 5
+  attackcooldown: 0
+  target: {fileID: 0}
   agent: {fileID: 1516593142}
   targetpos: {x: 0, y: 0, z: 0}
+  chompcasttime: 0
+  chomprange: 0
 --- !u!195 &1516593142
 NavMeshAgent:
   m_ObjectHideFlags: 0

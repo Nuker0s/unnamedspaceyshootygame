@@ -5,9 +5,9 @@ using UnityEngine.InputSystem;
 
 public class camscript : MonoBehaviour
 {
-    public Transform target; // The target to follow
-    public float smoothSpeed = 0.125f; // Smoothing factor (0.125 is a good starting point)
-    public Vector3 offset; // The camera's offset from the target
+    public Transform target; 
+    public float smoothSpeed = 0.125f; 
+    public Vector3 offset; 
     public float camrange = 5;
     void FixedUpdate()
     {

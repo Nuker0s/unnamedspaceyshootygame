@@ -22,7 +22,7 @@ public class BasicCannons : Weapon
     {
         firing = true;
         StartCoroutine(onfiring());
-        Debug.Log(1);
+        //Debug.Log(1);
 
     }
     public override void StopFire() 
@@ -32,13 +32,13 @@ public class BasicCannons : Weapon
     }
     public IEnumerator onfiring() 
     {
-        Debug.Log(3);
+        //Debug.Log(3);
         while(firing)
         {
             if(side)
             {
                 side = false;
-                Debug.Log(2);
+                //Debug.Log(2);
                 Instantiate(bullet, g1.position, Quaternion.LookRotation(transform.forward));
                 yield return new WaitForSeconds(cooldown);
             }

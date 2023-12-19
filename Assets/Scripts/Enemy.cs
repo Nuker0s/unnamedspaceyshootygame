@@ -25,10 +25,11 @@ public class Enemy : MonoBehaviour
     public virtual void Update()
     {
 
-
+        navigation();
     }
     public virtual void navigation() 
     {
+        
         if (Vector3.Distance(target.position, transform.position) < playerdetecionrange)
         {
             if (Vector3.Distance(target.position, transform.position) < attackrange)

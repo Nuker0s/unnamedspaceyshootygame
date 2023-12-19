@@ -33,12 +33,12 @@ public class Fighter : MonoBehaviour
     {
         if (fire.WasPressedThisFrame()) 
         {
-            Debug.Log(10);
+            //Debug.Log(10);
             weapon.Fire();
         }
         if (fire.WasReleasedThisFrame())
         {
-            Debug.Log(11);
+            //Debug.Log(11);
             weapon.StopFire();
         }
         LookAtMouseCursor();
@@ -73,7 +73,7 @@ public class Fighter : MonoBehaviour
         
         Vector2 dir = move.ReadValue<Vector2>();
         Vector3 dashVelocity = (Vector3.forward * dir.y + Vector3.right * dir.x).normalized * dashSpeed;
-        Debug.Log(dashVelocity);
+        //Debug.Log(dashVelocity);
         Vector2 beforedashvel = rb.velocity;
 
         
