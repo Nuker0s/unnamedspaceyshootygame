@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     public Transform target;
     public NavMeshAgent agent;
     public Vector3 targetpos;
-    
+    private bool scatter = false;
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -30,30 +30,43 @@ public class Enemy : MonoBehaviour
     }
     public virtual void navigation() 
     {
-        
-        if (Vector3.Distance(target.position, transform.position) < playerdetecionrange)
+        if (target != null)
         {
-            if (Vector3.Distance(target.position, transform.position) < attackrange)
+            if (Vector3.Distance(target.position, transform.position) < playerdetecionrange)
             {
-                agent.isStopped = true;
-                StartCoroutine(attack());
-            }
-            else
-            {
-                agent.isStopped = false;
-                StopCoroutine(attack());
-                if (target.position != targetpos)
+                if (Vector3.Distance(target.position, transform.position) < attackrange)
                 {
-                    targetpos = target.position;
-                    agent.SetDestination(targetpos);
-
-
+                    agent.isStopped = true;
+                    StartCoroutine(attack());
                 }
+                else
+                {
+                    agent.isStopped = false;
+                    StopCoroutine(attack());
+                    if (target.position != targetpos)
+                    {
+                        targetpos = target.position;
+                        agent.SetDestination(targetpos);
+
+
+                    }
+                }
+
+            }
+        }
+        else 
+        {
+            if (!scatter)
+            {
+                scatter = true;
+                agent.isStopped = false;
+                agent.SetDestination(new Vector3(transform.position.x + Random.Range(-150, 150), 0, transform.position.y + Random.Range(-150, 150)));
             }
 
         }
+
     }
-    public virtual IEnumerator attack() 
+    public virtual IEnumerator attack()
     {
         yield return null;
     }

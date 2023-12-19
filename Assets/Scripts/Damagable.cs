@@ -16,9 +16,17 @@ public class Damagable : MonoBehaviour
     {
         
     }
-    public virtual void ReciveDamage(float damage) 
+    public virtual void ReciveDamage(float damage)
     {
-        
+        hp -= damage;
+        if (hp <= 0)
+        {
+            Death();
+        }
+    }
+    public virtual void Death() 
+    {
+        Destroy(gameObject);
     }
 
 }

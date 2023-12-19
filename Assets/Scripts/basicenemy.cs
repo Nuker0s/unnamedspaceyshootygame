@@ -27,9 +27,21 @@ public class basicenemy : Enemy
             attacking = true;
             Debug.Log("attackstarted");
             yield return new WaitForSeconds(chompcasttime);
-            if (Vector3.Distance(target.position, transform.position) < chomprange)
+            if (target != null)
             {
-                Debug.Log("chomped");
+                if (Vector3.Distance(target.position, transform.position) < chomprange)
+                {
+
+                    Debug.Log("chomped");
+                    Damagable todamage = target.gameObject.GetComponent<Damagable>();
+                    if (todamage != null)
+                    {
+                        todamage.ReciveDamage(damage);
+
+                    }
+
+
+                }
             }
             else
             {
