@@ -34,7 +34,14 @@ public class Enemy : MonoBehaviour
         {
             if (Vector3.Distance(target.position, transform.position) < playerdetecionrange)
             {
-                if (Vector3.Distance(target.position, transform.position) < attackrange)
+                if (target.position != targetpos)
+                {
+                    targetpos = target.position;
+                    agent.SetDestination(targetpos);
+
+
+                }
+                if (Vector3.Distance(target.position, transform.position) < attackrange && agent.path.corners.Length < 3)
                 {
                     agent.isStopped = true;
                     StartCoroutine(attack());
@@ -43,13 +50,7 @@ public class Enemy : MonoBehaviour
                 {
                     agent.isStopped = false;
                     StopCoroutine(attack());
-                    if (target.position != targetpos)
-                    {
-                        targetpos = target.position;
-                        agent.SetDestination(targetpos);
 
-
-                    }
                 }
 
             }
