@@ -42,7 +42,8 @@ public class BasicCannons : Weapon
             {
                 side = false;
                 //Debug.Log(2);
-                Instantiate(bullet, g1.position, Quaternion.LookRotation(transform.forward));
+                Bullet b = Instantiate(bullet, g1.position, Quaternion.LookRotation(transform.forward)).GetComponent<Bullet>();
+                b.damage = damage;
                 oncooldown = true;
                 yield return new WaitForSeconds(cooldown);
                 oncooldown = false;
@@ -50,7 +51,9 @@ public class BasicCannons : Weapon
             else
             {
                 side = true;
-                Instantiate(bullet, g2.position, Quaternion.LookRotation(transform.forward));
+                Bullet b = Instantiate(bullet, g2.position, Quaternion.LookRotation(transform.forward)).GetComponent<Bullet>();
+                b.damage = damage;
+
                 oncooldown = true;
                 yield return new WaitForSeconds(cooldown);
                 oncooldown = false;

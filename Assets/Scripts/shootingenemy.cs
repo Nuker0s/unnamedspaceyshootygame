@@ -6,7 +6,7 @@ public class shootingenemy : Enemy
 {
     public GameObject bullet;
 
-    private void Update()
+    public override void Update()
     {
         base.Update();
         if (attacking) 

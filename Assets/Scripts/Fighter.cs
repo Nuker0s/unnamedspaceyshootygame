@@ -19,9 +19,11 @@ public class Fighter : MonoBehaviour
     public float dashCooldown = 1.0f;    
     private bool isDashing = false;
     private bool canDash = true;
+    public static Transform player;
     // Start is called before the first frame update
     void Start()
     {
+        player = transform;
         move = pinput.actions.FindAction("Move");
         dash = pinput.actions.FindAction("Dash");
         fire = pinput.actions.FindAction("Fire");
