@@ -8,9 +8,10 @@ public class shootingenemy : Enemy
 
     public override IEnumerator attack()
     {
+
         if (attacking)
         {
-
+            transform.rotation = Quaternion.LookRotation((target.position - transform.position).normalized);
         }
         else
         {
