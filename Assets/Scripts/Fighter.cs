@@ -31,16 +31,19 @@ public class Fighter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (fire.WasPressedThisFrame()) 
         {
-            //Debug.Log(10);
-            weapon.Fire();
+                weapon.Fire();
         }
         if (fire.WasReleasedThisFrame())
         {
-            //Debug.Log(11);
+
             weapon.StopFire();
+
         }
+
+
         LookAtMouseCursor();
         if (dash.triggered && !isDashing && canDash)
         {

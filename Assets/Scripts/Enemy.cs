@@ -25,7 +25,6 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
-
         navigation();
     }
     public virtual void navigation() 
@@ -44,10 +43,15 @@ public class Enemy : MonoBehaviour
                 if (Vector3.Distance(target.position, transform.position) < attackrange && agent.path.corners.Length < 3)
                 {
                     agent.isStopped = true;
+                    agent.updateRotation = false;
                     StartCoroutine(attack());
+                    
+                    
+                    
                 }
                 else
                 {
+                    agent.updateRotation = true;
                     agent.isStopped = false;
                     StopCoroutine(attack());
 

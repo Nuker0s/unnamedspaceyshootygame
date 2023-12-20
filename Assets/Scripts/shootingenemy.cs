@@ -6,12 +6,20 @@ public class shootingenemy : Enemy
 {
     public GameObject bullet;
 
+    private void Update()
+    {
+        base.Update();
+        if (attacking) 
+        {
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation((target.position - transform.position).normalized), 0.5f);
+        }
+    }
     public override IEnumerator attack()
     {
-
+        
         if (attacking)
         {
-            transform.rotation = Quaternion.LookRotation((target.position - transform.position).normalized);
+
         }
         else
         {

@@ -7,6 +7,7 @@ public class BasicCannons : Weapon
     public bool side = false;
     public Transform g1;
     public Transform g2;
+    public bool oncooldown = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,14 +22,16 @@ public class BasicCannons : Weapon
     public override void Fire()
     {
         firing = true;
-        StartCoroutine(onfiring());
-        //Debug.Log(1);
+        if (!oncooldown) 
+        {
+            StartCoroutine(onfiring());
+        }
 
     }
     public override void StopFire() 
     {
         firing = false;
-        StopCoroutine(onfiring());
+        
     }
     public IEnumerator onfiring() 
     {
@@ -40,14 +43,19 @@ public class BasicCannons : Weapon
                 side = false;
                 //Debug.Log(2);
                 Instantiate(bullet, g1.position, Quaternion.LookRotation(transform.forward));
+                oncooldown = true;
                 yield return new WaitForSeconds(cooldown);
+                oncooldown = false;
             }
             else
             {
                 side = true;
                 Instantiate(bullet, g2.position, Quaternion.LookRotation(transform.forward));
+                oncooldown = true;
                 yield return new WaitForSeconds(cooldown);
+                oncooldown = false;
             }
+            
         }
         
     }
