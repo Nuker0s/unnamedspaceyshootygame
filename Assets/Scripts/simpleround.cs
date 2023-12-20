@@ -24,6 +24,9 @@ public class simpleround : Bullet
             DealDamage(todamage);
             Destroy(gameObject);
         }
+        //rb.velocity = Vector3.zero;
+        rb.AddTorque(new Vector3(Random.Range(-1f,1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)) *Random.Range(-100,100));
+        //rb.AddForce(new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)) * Random.Range(-3000, 3000));
         Destroy(gameObject,1);
     }
 
