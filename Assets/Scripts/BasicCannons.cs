@@ -8,6 +8,7 @@ public class BasicCannons : Weapon
     public Transform g1;
     public Transform g2;
     public bool oncooldown = false;
+    public AudioClip shootsound;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +46,7 @@ public class BasicCannons : Weapon
                 Bullet b = Instantiate(bullet, g1.position, Quaternion.LookRotation(transform.forward)).GetComponent<Bullet>();
                 b.damage = damage;
                 oncooldown = true;
+                onesound.playsound(g1.position, shootsound, globalvariables.sfxvolume);
                 yield return new WaitForSeconds(cooldown);
                 oncooldown = false;
             }
@@ -55,6 +57,7 @@ public class BasicCannons : Weapon
                 b.damage = damage;
 
                 oncooldown = true;
+                onesound.playsound(g2.position, shootsound, globalvariables.sfxvolume);
                 yield return new WaitForSeconds(cooldown);
                 oncooldown = false;
             }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class shootingenemy : Enemy
 {
     public GameObject bullet;
-
+    public AudioClip shootsound;
     public override void Update()
     {
         base.Update();
@@ -26,6 +26,7 @@ public class shootingenemy : Enemy
             attacking = true;
 
             Bullet b = Instantiate(bullet,transform.position,Quaternion.LookRotation(target.position - transform.position)).GetComponent<Bullet>();
+            onesound.playsound(transform.position, shootsound, globalvariables.sfxvolume);
             b.damage = damage;
             yield return new WaitForSeconds(attackcooldown);
 

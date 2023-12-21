@@ -134,6 +134,7 @@ MonoBehaviour:
   agent: {fileID: 4735675338734869137}
   targetpos: {x: 0, y: 0, z: 0}
   bullet: {fileID: 1188220080394143608, guid: 40f4761d782e5584fa7a3dfdc5cfdbce, type: 3}
+  shootsound: {fileID: 8300000, guid: 7356574ad7210d64e8b87e0c99579fad, type: 3}
 --- !u!195 &4735675338734869137
 NavMeshAgent:
   m_ObjectHideFlags: 0
