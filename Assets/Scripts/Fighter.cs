@@ -10,6 +10,7 @@ public class Fighter : MonoBehaviour
     private InputAction move;
     private InputAction dash;
     private InputAction fire;
+    private InputAction swapweapons;
     private InputAction interact;
 
     [Header("Weaponry")]
@@ -39,26 +40,35 @@ public class Fighter : MonoBehaviour
         dash = pinput.actions.FindAction("Dash");
         fire = pinput.actions.FindAction("Fire");
         interact = pinput.actions.FindAction("Interact");
+        swapweapons = pinput.actions.FindAction("SwapWeapons");
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (fire.WasPressedThisFrame()) 
+        if (weapon != null)
         {
+            if (fire.WasPressedThisFrame())
+            {
+
                 weapon.Fire();
-        }
-        if (fire.WasReleasedThisFrame())
-        {
+            }
+            if (fire.WasReleasedThisFrame())
+            {
 
-            weapon.StopFire();
+                weapon.StopFire();
 
+            }
         }
+
         if (interact.WasReleasedThisFrame())
         {
             equipweapon();
+        }
+        if (swapweapons.WasReleasedThisFrame())
+        {
+            swapweapon();
         }
 
 
@@ -118,16 +128,42 @@ public class Fighter : MonoBehaviour
             Weapon toequip = hit.collider.gameObject.GetComponent<Weapon>();
             if (toequip != null) 
             {
-                toequip.Equip(transform);
-                toequip.transform.parent = weaponrack;
+                if (weaponrack.childCount < weaponslots)
+                {
+                    toequip.Equip(transform);
+                    toequip.transform.parent = weaponrack;
+                    toequip.transform.SetSiblingIndex(0);
+                    weapon = weaponrack.GetChild(0).GetComponent<Weapon>();
+
+                }
+                else
+                {
+
+                    weapon.UnEquip();
+                    weapon.transform.parent = null;
+                    weapon.transform.position = toequip.transform.position;
+
+                    toequip.Equip(transform);
+                    toequip.transform.parent = weaponrack;
+                    toequip.transform.SetSiblingIndex(0);
+                    weapon = weaponrack.GetChild(0).GetComponent<Weapon>();
+
+
+                }
                 
             }
+
 
         }
     }
     public void swapweapon() 
     {
-
+        if (weaponrack.childCount > 0) 
+        {
+            weaponrack.GetChild(weaponrack.childCount - 1).SetSiblingIndex(0);
+            weapon = weaponrack.GetChild(0).GetComponent<Weapon>();
+        }
+        
     }
 
 }

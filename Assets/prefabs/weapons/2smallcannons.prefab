@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331fbab36c2ecc64fbabf2554a0b7a86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sr: {fileID: 0}
+  sr: {fileID: 8555336552149076899}
   bc: {fileID: 6475361958635957218}
   rb: {fileID: 7065822831333266252}
   bullet: {fileID: 1188220080394143608, guid: eee1fce245c60aa4b85371e4dd73aaca, type: 3}
