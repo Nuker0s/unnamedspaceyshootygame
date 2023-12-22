@@ -7,12 +7,13 @@ public class Bullet : MonoBehaviour
     public Rigidbody rb;
     public float speed = 60;
     public float damage = 10;
+    public float lifetime = 10f;
     public Transform target;
     // Start is called before the first frame update
     virtual public void Start()
     {
         rb.velocity = transform.forward * speed;
-        Destroy(gameObject, 10);
+        Destroy(gameObject, lifetime);
     }
 
     // Update is called once per frame
@@ -24,4 +25,5 @@ public class Bullet : MonoBehaviour
     {
         target.ReciveDamage(damage);
     }
+
 }

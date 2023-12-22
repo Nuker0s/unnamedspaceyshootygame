@@ -5,15 +5,26 @@ using UnityEngine.InputSystem;
 
 public class Fighter : MonoBehaviour
 {
+    [Header("Inputs")]
     public PlayerInput pinput;
-    public InputAction move;
+    private InputAction move;
     private InputAction dash;
     private InputAction fire;
+    private InputAction interact;
+
+    [Header("Weaponry")]
+    public Transform weaponrack;
+    public int weaponslots;
+    public Weapon weapon;
+    [Header("Equpment")]
+    public float castrange = 100f;
+    public LayerMask layermask;
+
+    [Header("Movement")] 
     public float force;
     public Rigidbody rb;
     public Transform target;
-
-    public Weapon weapon;
+    [Header("Dash")]
     public float dashSpeed = 200f;       
     public float dashDuration = 0.2f;    
     public float dashCooldown = 1.0f;    
@@ -27,6 +38,7 @@ public class Fighter : MonoBehaviour
         move = pinput.actions.FindAction("Move");
         dash = pinput.actions.FindAction("Dash");
         fire = pinput.actions.FindAction("Fire");
+        interact = pinput.actions.FindAction("Interact");
 
     }
 
@@ -43,6 +55,10 @@ public class Fighter : MonoBehaviour
 
             weapon.StopFire();
 
+        }
+        if (interact.WasReleasedThisFrame())
+        {
+            equipweapon();
         }
 
 
@@ -92,6 +108,26 @@ public class Fighter : MonoBehaviour
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
         isDashing = false;
+    }
+    public void equipweapon() 
+    {
+        //Debug.Log("equipobeam");
+        if (Physics.Raycast(transform.position,transform.forward,out RaycastHit hit,castrange,layermask))
+        {
+            Debug.Log(hit.collider.gameObject.name);
+            Weapon toequip = hit.collider.gameObject.GetComponent<Weapon>();
+            if (toequip != null) 
+            {
+                toequip.Equip(transform);
+                toequip.transform.parent = weaponrack;
+                
+            }
+
+        }
+    }
+    public void swapweapon() 
+    {
+
     }
 
 }
