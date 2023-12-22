@@ -359,6 +359,7 @@ MonoBehaviour:
   g1: {fileID: 9628317}
   g2: {fileID: 575018420}
   oncooldown: 0
+  shootsound: {fileID: 8300000, guid: 7356574ad7210d64e8b87e0c99579fad, type: 3}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,7 +370,6 @@ GameObject:
   m_Component:
   - component: {fileID: 330585546}
   - component: {fileID: 330585545}
-  - component: {fileID: 330585544}
   - component: {fileID: 330585547}
   - component: {fileID: 330585549}
   m_Layer: 0
@@ -379,14 +379,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &330585544
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330585543}
-  m_Enabled: 1
 --- !u!20 &330585545
 Camera:
   m_ObjectHideFlags: 0
@@ -2415,6 +2407,7 @@ GameObject:
   - component: {fileID: 7607905639647913138}
   - component: {fileID: 7607905639647913140}
   - component: {fileID: 7607905639647913141}
+  - component: {fileID: 7607905639647913142}
   m_Layer: 6
   m_Name: Bob
   m_TagString: Untagged
@@ -2589,6 +2582,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   background: {fileID: 1975081053}
+--- !u!81 &7607905639647913142
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6156630590823657908}
+  m_Enabled: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
