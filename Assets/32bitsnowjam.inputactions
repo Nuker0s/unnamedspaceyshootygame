@@ -284,7 +284,7 @@
                 {
                     "name": "",
                     "id": "7bd683a1-b183-4c7f-90b5-02b0afe6bbc2",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/leftShift",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -306,7 +306,7 @@
                 {
                     "name": "",
                     "id": "498f0b53-c793-4593-b277-4e972265e8b1",
-                    "path": "<Mouse>/middleButton",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

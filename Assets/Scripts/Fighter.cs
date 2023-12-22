@@ -41,6 +41,7 @@ public class Fighter : MonoBehaviour
         fire = pinput.actions.FindAction("Fire");
         interact = pinput.actions.FindAction("Interact");
         swapweapons = pinput.actions.FindAction("SwapWeapons");
+        equipweapon();
 
     }
 
