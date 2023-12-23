@@ -46,7 +46,7 @@ public class EnemySpawner : MonoBehaviour
                 {
                     Debug.Log("spawnerrangecheck");
                     yield return new WaitForEndOfFrame();
-                    Vector3 pos = transform.position + new Vector3(Random.Range(-range, range), -3.13f, Random.Range(-range, range));
+                    Vector3 pos = transform.position + new Vector3(Random.Range(-range, range), 0, Random.Range(-range, range));
                     
                     if (NavMesh.SamplePosition(pos, out NavMeshHit hit, 30, 1))
                     {

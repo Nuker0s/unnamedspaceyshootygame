@@ -134,6 +134,7 @@ public class Fighter : MonoBehaviour
                     toequip.Equip(transform);
                     toequip.transform.parent = weaponrack;
                     toequip.transform.SetSiblingIndex(0);
+                    weapon?.StopFire();
                     weapon = weaponrack.GetChild(0).GetComponent<Weapon>();
 
                 }
@@ -147,6 +148,7 @@ public class Fighter : MonoBehaviour
                     toequip.Equip(transform);
                     toequip.transform.parent = weaponrack;
                     toequip.transform.SetSiblingIndex(0);
+                    weapon?.StopFire();
                     weapon = weaponrack.GetChild(0).GetComponent<Weapon>();
 
 
@@ -157,6 +159,7 @@ public class Fighter : MonoBehaviour
 
         }
     }
+    
     public void swapweapon() 
     {
         if (weaponrack.childCount > 0) 
