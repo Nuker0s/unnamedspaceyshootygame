@@ -45,10 +45,10 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _chance: 5
-    - _fracturazing: 0.1
-    - _maxoffset: 0.48
+    - _fracturazing: 0.2
+    - _maxoffset: 0.42
     - _rot: 90
-    - _scale: 32.48
+    - _scale: 30
     m_Colors:
     - _axis: {r: 1, g: 0, b: 0, a: 0}
     - _edgeofspace: {r: 2998.01, g: 2, b: 0, a: 0}
