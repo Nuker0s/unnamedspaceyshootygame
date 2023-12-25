@@ -20,7 +20,7 @@ public class MoneyManager : MonoBehaviour
 
     // Update is called once per frame
 
-    private void Update()
+    private void FixedUpdate()
     {
         foreach (Transform moneygroup in transform)
         {
