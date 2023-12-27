@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public float attackrange;
     public float attackcooldown;
     public bool attacking;
+    
     public Transform target;
     public NavMeshAgent agent;
     public Vector3 targetpos;

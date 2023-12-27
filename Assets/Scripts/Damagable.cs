@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
 using UnityEngine;
 
 public class Damagable : MonoBehaviour
 {
     public float hp = 100;
+    public bool cancollectmoney;
+    public int money;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +19,22 @@ public class Damagable : MonoBehaviour
     {
         
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (cancollectmoney)
+        {
+            moneychunk chunk = other.gameObject.GetComponent<moneychunk>();
+            if (chunk != null)
+            {
+                
+                money += chunk.value;
+                Destroy(chunk.gameObject);
+
+            }
+
+        }
+    }
+
     public virtual void ReciveDamage(float damage)
     {
         hp -= damage;
@@ -27,6 +46,7 @@ public class Damagable : MonoBehaviour
     public virtual void Death() 
     {
         Destroy(gameObject);
+        Debug.Log("yep");
     }
 
 }

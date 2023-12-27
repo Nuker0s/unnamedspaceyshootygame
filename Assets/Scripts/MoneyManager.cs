@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -10,12 +11,16 @@ public class MoneyManager : MonoBehaviour
     public float lerp;
     public float attractdistance;
     public float collectdistance;
-    
+
+    public static MoneyManager instance;
+
+    public static List<GameObject> moneyprefabs = new List<GameObject>();
+
     public float inbank;
     // Start is called before the first frame update
     void Start()
     {
-        
+        MoneyManager.instance = this;
     }
 
     // Update is called once per frame
@@ -38,7 +43,8 @@ public class MoneyManager : MonoBehaviour
                 if (Vector3.Distance(player.position, money.position) < collectdistance)
                 {
                     inbank += money.GetComponent<moneychunk>().value;
-                    Destroy(money.gameObject);
+                    //Destroy(money.gameObject);
+
                 }
             }
         }

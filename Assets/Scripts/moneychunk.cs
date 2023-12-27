@@ -4,5 +4,7 @@ using UnityEngine;
 
 public class moneychunk : MonoBehaviour
 {
-    public float value;
+
+    public int value;
+
 }
