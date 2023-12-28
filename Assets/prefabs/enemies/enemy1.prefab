@@ -121,6 +121,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
+  cancollectmoney: 0
+  money: 32
 --- !u!195 &1043685922425708439
 NavMeshAgent:
   m_ObjectHideFlags: 0

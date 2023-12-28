@@ -45,8 +45,8 @@ public class Damagable : MonoBehaviour
     }
     public virtual void Death() 
     {
-        Destroy(gameObject);
-        Debug.Log("yep");
+        StartCoroutine(MoneyManager.dropmoney(money, transform.position));
+        Destroy(gameObject);     
     }
 
 }

@@ -7,4 +7,8 @@ public class moneychunk : MonoBehaviour
 
     public int value;
 
+    private void Start()
+    {
+         
+    }
 }

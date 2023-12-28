@@ -170,6 +170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
+  cancollectmoney: 0
+  money: 45
 --- !u!65 &3294308891825729794
 BoxCollider:
   m_ObjectHideFlags: 0
