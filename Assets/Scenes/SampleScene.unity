@@ -1691,9 +1691,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 6790142134443354894}
-  lerp: 0.02
+  lerp: 0.05
   attractdistance: 20
   collectdistance: 7
+  moneyprefabsinspector:
+  - {fileID: 7537670877850481375, guid: 52367f3e1a1fa8141b703400095b236e, type: 3}
+  - {fileID: 8598298126232163932, guid: d557db8cad03b1041b03e3fe4892acf3, type: 3}
+  - {fileID: 5302885861471370132, guid: d278520c31ce11a41ba494255cebfc02, type: 3}
   inbank: 0
 --- !u!4 &440254262
 Transform:
@@ -6859,6 +6863,7 @@ GameObject:
   - component: {fileID: 7607905639647913140}
   - component: {fileID: 7607905639647913141}
   - component: {fileID: 7607905639647913142}
+  - component: {fileID: 7607905639647913143}
   m_Layer: 6
   m_Name: Bob
   m_TagString: Untagged
@@ -7114,6 +7119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
+  cancollectmoney: 1
+  money: 0
   background: {fileID: 1975081053}
 --- !u!81 &7607905639647913142
 AudioListener:
@@ -7123,6 +7130,27 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6156630590823657908}
   m_Enabled: 1
+--- !u!65 &7607905639647913143
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6156630590823657908}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 11, y: 2.0353303, z: 6.56}
+  m_Center: {x: 0, y: 0.14345163, z: 0.42}
 --- !u!1001 &7768668522676022815
 PrefabInstance:
   m_ObjectHideFlags: 0
