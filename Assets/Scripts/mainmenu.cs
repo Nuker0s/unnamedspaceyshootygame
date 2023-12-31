@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -19,17 +20,18 @@ public class MainMenu : MonoBehaviour
     {
         
     }
-    public static void LoadButton(string SceneToLoad) 
+    public void LoadButton(string SceneToLoad) 
     {
         SceneManager.LoadScene(SceneToLoad);
     }
-    public static void ToOtherMenu(GameObject selfparent, GameObject obj) 
+    public void ToOtherMenu(GameObject obj) 
     {
         obj.SetActive(true);
-        selfparent.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
-    public static void Quit() 
+    public void Quit() 
     {
+        
         Application.Quit();
     }
 }
