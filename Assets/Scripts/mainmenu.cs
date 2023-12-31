@@ -31,7 +31,10 @@ public class MainMenu : MonoBehaviour
     }
     public void Quit() 
     {
-        
+        if (Application.isEditor)
+        {
+            EditorApplication.ExitPlaymode();
+        }
         Application.Quit();
     }
 }
