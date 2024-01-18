@@ -29,44 +29,13 @@ public class EnemySpawner : MonoBehaviour
                 if (Vector3.Distance(transform.position, Fighter.player.transform.position) < activationdistance)
                 {
                     turnedOn = true;
-                    StartCoroutine(SpawnEnemies());
+                    StartCoroutine(Spawner.Spawn(transform.position,range,enemies,transform,1));
                 }
 
             }
         }
     }
-    public IEnumerator SpawnEnemies() 
-    {
-        foreach (PrefabSpawnData enemychunks in enemies)
-        {
-            for (int i = 0; i < enemychunks.howmuchtospawn; i++)
-            {
-                
-                while (true)
-                {
-                    Debug.Log("spawnerrangecheck");
-                    yield return new WaitForEndOfFrame();
-                    Vector3 pos = transform.position + new Vector3(Random.Range(-range, range), 0, Random.Range(-range, range));
-                    
-                    if (NavMesh.SamplePosition(pos, out NavMeshHit hit, 30, 1))
-                    {
-                        Instantiate(enemychunks.enemy, hit.position, Quaternion.identity, transform);
-                        break;
-                    }
-                }
-                
-                
-                
-                
-            }
-        }
-        yield return null;
-    }
 
-    [System.Serializable]
-    public class PrefabSpawnData 
-    {
-        public GameObject enemy;
-        public int howmuchtospawn;
-    }
+
+
 }

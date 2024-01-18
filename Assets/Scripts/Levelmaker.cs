@@ -5,7 +5,8 @@ using static EnemySpawner;
 
 public class Levelmaker : MonoBehaviour
 {
-    public List<PrefabSpawnData> enemies = new List<PrefabSpawnData>();
+    public List<PrefabSpawnData> Spawners = new List<PrefabSpawnData>();
+    public float wordsize;
     public Transform todestroy;
     public Transform moneyparent;
     public asteroidscatter asteroids;
@@ -36,5 +37,6 @@ public class Levelmaker : MonoBehaviour
             Destroy(item.gameObject);
         }
         asteroids.regen();
+        StartCoroutine(Spawner.Spawn(Vector3.zero, wordsize, Spawners, todestroy, 1));
     }
 }

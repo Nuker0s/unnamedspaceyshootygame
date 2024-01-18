@@ -9,10 +9,19 @@ public class shootingenemy : Enemy
     public override void Update()
     {
         base.Update();
-        if (attacking) 
+        try
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation((target.position - transform.position).normalized), 0.5f);
+            if (attacking)
+            {
+                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation((target.position - transform.position).normalized), 0.5f);
+            }
         }
+        catch (System.Exception)
+        {
+
+            
+        }
+
     }
     public override IEnumerator attack()
     {

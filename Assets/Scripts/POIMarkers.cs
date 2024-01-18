@@ -14,20 +14,29 @@ public class POIMarkers : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (target != null && player != null) 
+        try
         {
-            transform.position = player.position + (target.position - player.position).normalized * 10;
-            transform.rotation = Quaternion.LookRotation((target.position - player.position).normalized);
-        }
-        else
-        {
-            if (transform.parent != null && Fighter.player.transform != null)
+            if (target != null && player != null)
             {
-
+                transform.position = player.position + (target.position - player.position).normalized * 10;
+                transform.rotation = Quaternion.LookRotation((target.position - player.position).normalized);
             }
-            target = transform.parent;
-            player = Fighter.player.transform;
+            else
+            {
+                if (transform.parent != null && Fighter.player.transform != null)
+                {
+
+                }
+                target = transform.parent;
+                player = Fighter.player.transform;
+            }
         }
+        catch (System.Exception)
+        {
+
+            
+        }
+
 
     }
 }
