@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public List<EnemyData> enemies = new List<EnemyData>();
+    public List<PrefabSpawnData> enemies = new List<PrefabSpawnData>();
     public float activationdistance;
     public float range;
     public bool turnedOn;
@@ -37,7 +37,7 @@ public class EnemySpawner : MonoBehaviour
     }
     public IEnumerator SpawnEnemies() 
     {
-        foreach (EnemyData enemychunks in enemies)
+        foreach (PrefabSpawnData enemychunks in enemies)
         {
             for (int i = 0; i < enemychunks.howmuchtospawn; i++)
             {
@@ -64,7 +64,7 @@ public class EnemySpawner : MonoBehaviour
     }
 
     [System.Serializable]
-    public class EnemyData 
+    public class PrefabSpawnData 
     {
         public GameObject enemy;
         public int howmuchtospawn;

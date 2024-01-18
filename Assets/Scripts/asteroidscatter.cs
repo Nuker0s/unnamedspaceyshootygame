@@ -11,18 +11,18 @@ public class asteroidscatter : MonoBehaviour
     public float astcount;
     public bool regenerate;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
-        if (regenerate) 
+        if (regenerate)
         {
             regenerate = false;
+            regen();
+        }
+
+    }
+    public void regen() 
+    {
             try
             {
                 Destroy(oldparent);
@@ -42,9 +42,9 @@ public class asteroidscatter : MonoBehaviour
                 Vector3 rot = new Vector3(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360));
                 GameObject ast = Instantiate(asteroid, pos, Quaternion.Euler(rot), p.transform);
                 float size = Random.Range(minmaxastsize.x, minmaxastsize.y);
-                ast.transform.localScale = new Vector3 (size, size, size);
+                ast.transform.localScale = new Vector3(size, size, size);
             }
 
-        }
+        
     }
 }
