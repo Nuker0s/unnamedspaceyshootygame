@@ -23,10 +23,10 @@ public class EnemySpawner : MonoBehaviour
     {
         if (!turnedOn)
         {
-            if (Fighter.player != null)
+            if (Player.player != null)
             {
                 
-                if (Vector3.Distance(transform.position, Fighter.player.transform.position) < activationdistance)
+                if (Vector3.Distance(transform.position, Player.player.transform.position) < activationdistance)
                 {
                     turnedOn = true;
                     StartCoroutine(Spawner.Spawn(transform.position,range,enemies,transform,1));

@@ -23,12 +23,12 @@ public class POIMarkers : MonoBehaviour
             }
             else
             {
-                if (transform.parent != null && Fighter.player.transform != null)
+                if (transform.parent != null && Player.player.transform != null)
                 {
 
                 }
                 target = transform.parent;
-                player = Fighter.player.transform;
+                player = Player.player.transform;
             }
         }
         catch (System.Exception)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Fighter : MonoBehaviour
+public class Player : MonoBehaviour
 {
     [Header("Inputs")]
     public PlayerInput pinput;
@@ -87,9 +87,6 @@ public class Fighter : MonoBehaviour
     {
         Vector2 dir = move.ReadValue<Vector2>();
         rb.AddForce((Vector3.forward * dir.y + Vector3.right * dir.x).normalized * force);
-
-
-        
     }
     public void LookAtMouseCursor()
     {
@@ -156,8 +153,8 @@ public class Fighter : MonoBehaviour
                 
             }
 
-
         }
+
     }
     
     public void swapweapon() 

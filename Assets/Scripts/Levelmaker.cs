@@ -11,6 +11,7 @@ public class Levelmaker : MonoBehaviour
     public Transform moneyparent;
     public asteroidscatter asteroids;
     public bool regenerateALL = true;
+    public Transform player;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,10 @@ public class Levelmaker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (regenerateALL) 
+        {
+
+        }
         if (regenerateALL)
         {
             regenerateALL = false;
@@ -28,6 +33,7 @@ public class Levelmaker : MonoBehaviour
     }
     public void AllGen() 
     {
+        player.position = Vector3.zero;
         foreach (Transform item in todestroy)
         {
             Destroy(item.gameObject);
