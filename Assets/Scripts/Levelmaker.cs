@@ -11,29 +11,30 @@ public class Levelmaker : MonoBehaviour
     public Transform moneyparent;
     public asteroidscatter asteroids;
     public bool regenerateALL = true;
-    public Transform player;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        //playerscript = player.GetComponent<Player>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (regenerateALL) 
+        if (!regenerateALL && Player.playerscript.keys >= 3 && Vector3.Distance(Player.player.position,transform.position) < 10) 
         {
-
+            regenerateALL = true;
         }
         if (regenerateALL)
         {
             regenerateALL = false;
+            Player.playerscript.keys = 0;
             AllGen();
         }
     }
     public void AllGen() 
     {
-        player.position = Vector3.zero;
+        Player.player.position = Vector3.zero;
         foreach (Transform item in todestroy)
         {
             Destroy(item.gameObject);

@@ -10,6 +10,7 @@ public class EnemySpawner : MonoBehaviour
     public float activationdistance;
     public float range;
     public bool turnedOn;
+    public bool spawned;
     public NavMeshSurface surface; 
 
     // Start is called before the first frame update
@@ -32,6 +33,18 @@ public class EnemySpawner : MonoBehaviour
                     StartCoroutine(Spawner.Spawn(transform.position,range,enemies,transform,1));
                 }
 
+            }
+        }
+        if (transform.childCount > 1)
+        {
+            spawned = true;
+        }
+        if (spawned)
+        {
+            if (transform.childCount == 1)
+            {
+                Player.playerscript.keys += 1;
+                spawned = false;
             }
         }
     }

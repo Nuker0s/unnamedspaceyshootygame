@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     [Header("Equpment")]
     public float castrange = 100f;
     public LayerMask layermask;
+    public int keys = 0;
 
     [Header("Movement")] 
     public float force;
@@ -32,9 +33,11 @@ public class Player : MonoBehaviour
     private bool isDashing = false;
     private bool canDash = true;
     public static Transform player;
+    public static Player playerscript;
     // Start is called before the first frame update
     void Start()
     {
+        playerscript = this;
         player = transform;
         move = pinput.actions.FindAction("Move");
         dash = pinput.actions.FindAction("Dash");
