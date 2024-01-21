@@ -43,8 +43,10 @@ public class EnemySpawner : MonoBehaviour
         {
             if (transform.childCount == 1)
             {
+                
                 Player.playerscript.keys += 1;
                 spawned = false;
+                Destroy(gameObject);   
             }
         }
     }

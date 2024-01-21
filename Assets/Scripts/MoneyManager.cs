@@ -54,26 +54,30 @@ public class MoneyManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        foreach (Transform moneygroup in transform)
+        if (player!=null)
         {
-            if (moneygroup.childCount < 1)
+            foreach (Transform moneygroup in transform)
             {
-                Destroy(moneygroup.gameObject);
-            }
-            foreach (Transform money in moneygroup)
-            {
-                
-                if (Vector3.Distance(player.position,money.position) < attractdistance)
+                if (moneygroup.childCount < 1)
                 {
-                    money.position = math.lerp(money.position, player.position, lerp);
+                    Destroy(moneygroup.gameObject);
                 }
-                if (Vector3.Distance(player.position, money.position) < collectdistance)
+                foreach (Transform money in moneygroup)
                 {
-                    inbank += money.GetComponent<moneychunk>().value;
-                    //Destroy(money.gameObject);
 
+                    if (Vector3.Distance(player.position, money.position) < attractdistance)
+                    {
+                        money.position = math.lerp(money.position, player.position, lerp);
+                    }
+                    if (Vector3.Distance(player.position, money.position) < collectdistance)
+                    {
+                        inbank += money.GetComponent<moneychunk>().value;
+                        //Destroy(money.gameObject);
+
+                    }
                 }
             }
         }
+
     }
 }
